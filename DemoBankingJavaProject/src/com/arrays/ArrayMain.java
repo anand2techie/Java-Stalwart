@@ -5,24 +5,75 @@ public class ArrayMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		//Creating an array
-		int[] evenNumbersArray=new int[5];
+		int[] numbersArray = createAnArray();
 		
+		addValuesToAnArray(numbersArray);
+		
+		/*char[] accountTypeArray2={'S','L','C','R'};
+		
+		addValuesToAnArray(evenNumbersArray);
+		//last index of this array is 9.
+		
+		//System.out.println(evenNumbersArray); // when u print an array without an index, it will print as a reference not the real data
+		
+		iterateArraysUsingDiffLoops(evenNumbersArray, accountTypeArray2);*/
+		ArrayUtil arrayUtil=new ArrayUtil();
+		arrayUtil.insertElementIntoAnIntegerArray(10000, numbersArray, 2);
+	}
+
+
+	private static void addValuesToAnArray(int[] evenNumbersArray) {
 		//adding values to an array: arrayName[index]=value;
 		evenNumbersArray[0]=0;
 		evenNumbersArray[1]=2;
 		evenNumbersArray[2]=4;
 		evenNumbersArray[3]=6;
 		evenNumbersArray[4]=8;
-		
-		//System.out.println(evenNumbersArray); // when u print an array without an index, it will print as a reference not the real data
-		
-	//for(initialize;check-condition;increment/decrement
-		for(int i=0;i<evenNumbersArray.length;i++) //evenNumbersArray.length = 5 //0,1,2,3,4,5
-		{
-			System.out.println(evenNumbersArray[i]);
-		}
-		
+	}
+
+
+	private static void iterateArraysUsingDiffLoops(int[] evenNumbersArray, char[] accountTypeArray2) {
+		//for(initialize;check-condition;increment/decrement
+			for(int i=0;i<evenNumbersArray.length;i++) //evenNumbersArray.length = 5 //0,1,2,3,4,5
+			{
+				
+								//retrieving (or) accessing the values back
+				System.out.println(evenNumbersArray[i]);
+			}
+			
+			/*for-each
+			for(dataType variableName:array)
+			{
+			
+			}
+			*/
+			for(char ch:accountTypeArray2)
+			{
+				System.out.println(ch);
+			}
+			
+			for(int i=0;i<accountTypeArray2.length;i++)
+			{
+				System.out.println(accountTypeArray2[i]);
+			}
+	}
+
+
+	private static void createAccountTypesWithValuesLoaded() {
+		//account type --> S,L,C,R
+		char[] accountTypeArray=new char[4];
+		accountTypeArray[0]='S';
+		accountTypeArray[1]='L';
+		accountTypeArray[2]='C';
+		accountTypeArray[3]='R';
+	}
+
+	
+	//create an integer array
+	private static int[] createAnArray() {
+		//Creating an array
+		int[] evenNumbersArray=new int[10];
+		return evenNumbersArray;
 	}
 
 }
