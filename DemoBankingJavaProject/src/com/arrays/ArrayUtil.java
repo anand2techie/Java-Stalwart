@@ -2,6 +2,7 @@ package com.arrays;
 
 public class ArrayUtil {
 	
+	//Methods other than static are called instance methods
 	//3 things?????
 	void insertElementIntoAnIntegerArray(int elementToBeInserted,int[] oldArray,int indexWhereToBeInserted)
 	{
@@ -29,6 +30,9 @@ public class ArrayUtil {
 		
 		System.out.println("after insertion");
 		printArrayValues(newArray);
+		
+		//calling a static properties from an instance method (same class)- possible
+		testStaticMethod();
 	}
 	
 	void printArrayValues(int[] testArray)
@@ -37,6 +41,17 @@ public class ArrayUtil {
 		{
 			System.out.println(i);
 		}
+	}
+	
+	//class loading
+	static void testStaticMethod()
+	{
+		//instanceMethod();
+	}
+	
+	void instanceMethod()
+	{
+		testStaticMethod();
 	}
 
 }

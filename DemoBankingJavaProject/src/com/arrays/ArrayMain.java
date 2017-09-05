@@ -1,12 +1,21 @@
 package com.arrays;
 
 public class ArrayMain {
+	
+	
+	int xxxInstanceVariable;
+	static int xxxStaticVariable;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		System.out.println(xxxStaticVariable);
+		//System.out.println(xxxInstanceVariable);
+		
 		int[] numbersArray = createAnArray();
 		
+		
+		//calling a static method from another static method (same class) - possible
 		addValuesToAnArray(numbersArray);
 		
 		/*char[] accountTypeArray2={'S','L','C','R'};
@@ -19,6 +28,13 @@ public class ArrayMain {
 		iterateArraysUsingDiffLoops(evenNumbersArray, accountTypeArray2);*/
 		ArrayUtil arrayUtil=new ArrayUtil();
 		arrayUtil.insertElementIntoAnIntegerArray(10000, numbersArray, 2);
+		
+		//calling a static properties from another static method (diff class) - possible
+		ArrayUtil.testStaticMethod();
+		
+		//calling a non-static properties from another static method (saame class) - not possible
+		//testInstanceMethod();
+		
 	}
 
 
@@ -74,6 +90,15 @@ public class ArrayMain {
 		//Creating an array
 		int[] evenNumbersArray=new int[10];
 		return evenNumbersArray;
+	}
+	
+	void testInstanceMethod(){
+		
+		//calling a static properties from an instance method (different class)- possible
+		ArrayUtil.testStaticMethod();
+		
+		System.out.println(xxxStaticVariable);
+		System.out.println(xxxInstanceVariable);
 	}
 
 }

@@ -11,6 +11,8 @@ public class CustomerEncapsulatedClass {
 		private final float rateOfInterest=12.6f; //0
 		private final float PI=3.14f; //0
 		
+		//static variable
+		private static String bankName="HDFC Bank";
 		
 		public String getCustomerName() {
 			System.out.println("Inside get method");
