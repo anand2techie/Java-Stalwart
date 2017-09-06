@@ -76,4 +76,46 @@ public class Customer {
 	void findArea(float PI, int radius) {
 
 	}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(long customerId) {
+		this.customerId = customerId;
+	}
+
+	public double getAccountBalance() {
+		return accountBalance;
+	}
+
+	public void setAccountBalance(double accountBalance) {
+		this.accountBalance = accountBalance;
+	}
+
+	public char getAccountType() {
+		return accountType;
+	}
+
+	public void setAccountType(char accountType) {
+		this.accountType = accountType;
+	}
+
+	public float getRateOfInterest() {
+		return rateOfInterest;
+	}
+
+	public float getPI() {
+		return PI;
+	}
+	
+	
 }

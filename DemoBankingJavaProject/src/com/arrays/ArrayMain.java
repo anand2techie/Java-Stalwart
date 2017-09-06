@@ -9,23 +9,25 @@ public class ArrayMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		System.out.println(xxxStaticVariable);
+		//System.out.println(xxxStaticVariable);
 		//System.out.println(xxxInstanceVariable);
 		
 		int[] numbersArray = createAnArray();
-		
-		
-		//calling a static method from another static method (same class) - possible
 		addValuesToAnArray(numbersArray);
 		
-		/*char[] accountTypeArray2={'S','L','C','R'};
+		ArraysUsageClass.learnArraysMethods(numbersArray);
+		
+		ArrayUtil.learnArrayOfObjects();
+		/*//calling a static method from another static method (same class) - possible
+		
+		char[] accountTypeArray2={'S','L','C','R'};
 		
 		addValuesToAnArray(evenNumbersArray);
 		//last index of this array is 9.
 		
 		//System.out.println(evenNumbersArray); // when u print an array without an index, it will print as a reference not the real data
 		
-		iterateArraysUsingDiffLoops(evenNumbersArray, accountTypeArray2);*/
+		iterateArraysUsingDiffLoops(evenNumbersArray, accountTypeArray2);
 		ArrayUtil arrayUtil=new ArrayUtil();
 		arrayUtil.insertElementIntoAnIntegerArray(10000, numbersArray, 2);
 		
@@ -34,17 +36,18 @@ public class ArrayMain {
 		
 		//calling a non-static properties from another static method (saame class) - not possible
 		//testInstanceMethod();
-		
+		*/
 	}
 
 
 	private static void addValuesToAnArray(int[] evenNumbersArray) {
 		//adding values to an array: arrayName[index]=value;
 		evenNumbersArray[0]=0;
-		evenNumbersArray[1]=2;
-		evenNumbersArray[2]=4;
+		evenNumbersArray[1]=10;
+		evenNumbersArray[2]=8;
 		evenNumbersArray[3]=6;
-		evenNumbersArray[4]=8;
+		evenNumbersArray[4]=4;
+		evenNumbersArray[5]=2;
 	}
 
 
