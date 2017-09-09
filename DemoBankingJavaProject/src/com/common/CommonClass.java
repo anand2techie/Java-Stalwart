@@ -8,5 +8,8 @@ public class CommonClass {
 	public void testCommonMethod()
 	{
 		System.out.println(testCommonVariable);
+		int number=0;
+		
+		int quotient=10/number; //infinity
 	}
 }

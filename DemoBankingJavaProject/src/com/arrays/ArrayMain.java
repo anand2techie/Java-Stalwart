@@ -12,12 +12,16 @@ public class ArrayMain {
 		//System.out.println(xxxStaticVariable);
 		//System.out.println(xxxInstanceVariable);
 		
+		int number=0;
+		
+		int quotient=10/number; //infinity
+		
 		int[] numbersArray = createAnArray();
 		addValuesToAnArray(numbersArray);
 		
 		ArraysUsageClass.learnArraysMethods(numbersArray);
-		
-		ArrayUtil.learnArrayOfObjects();
+		ArraysUsageClass.iterateAnIntArray(numbersArray);
+		//ArrayUtil.learnArrayOfObjects();
 		/*//calling a static method from another static method (same class) - possible
 		
 		char[] accountTypeArray2={'S','L','C','R'};

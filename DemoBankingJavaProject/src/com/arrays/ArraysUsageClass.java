@@ -62,10 +62,10 @@ System.out.println("Value of new array with range");
 		iterateAnIntArray(numbersArray);
 	}
 
-	private static void iterateAnIntArray(int[] numbersArray) {
-		for(int number:numbersArray)
+	public static void iterateAnIntArray(int[] numbersArray) {
+		for(int i=0;i<=numbersArray.length;i++)
 		{
-			System.out.println(number);
+			System.out.println(numbersArray[i]);
 		}
 	}
 }

@@ -6,11 +6,20 @@ public class StringMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		String nullString=null;
+		
+		//you're doing with nothing
+		System.out.println(nullString.length());
+		
 		String emptyString="";
+		
+		String commaSeparatedNames="Arun,Dinesh,Raj,Dave";
+		
+		String nameWithLocation="Alex-Chennai";
 		
 		String customerNameAsALiteral="Charles david";//literal
 												//0123456
-		String customerNameAsAnObject=new String("charles");//object
+		String customerNameAsAnObject=new String("charles david");//object
 		
 		char[] nameArray={'c','h','a','r','l','e','s'};
 		String customerNameAsAnArray=new String(nameArray);//from an array
@@ -21,7 +30,7 @@ public class StringMain {
 		/*main.printVowelCharacters(customerNameAsAnObject);
 		compareTwoStringsUsingCompareTo(customerNameAsALiteral, customerNameAsAnObject,false);*/
 		
-		customerNameAsAnObject = concatStrings(customerNameAsAnObject);
+		/*customerNameAsAnObject = concatStrings(customerNameAsAnObject);
 		
 		useContainsMethod(customerNameAsAnObject);
 		
@@ -32,6 +41,35 @@ public class StringMain {
 		useIndexOfMethods(customerNameAsAnObject);
 		
 		isEmptyString(emptyString);
+		*/
+		String customerNameAfterReplacement=customerNameAsAnObject.replace("david", "malik");
+		
+		//System.out.println("After replacement: "+customerNameAfterReplacement);
+		
+		String[] namesArray=commaSeparatedNames.split(",");
+		
+		String[] nameAndLocationSplittedArray=nameWithLocation.split("\\.");
+		System.out.println(nameAndLocationSplittedArray[0]);//Alex-Chennai
+		//System.out.println(nameAndLocationSplittedArray[1]);
+		/*
+		for(String name:namesArray){
+			System.out.println(name);
+		}*/
+		
+		char[] charFromString=customerNameAsAnObject.toCharArray();
+		for(char ch:charFromString)
+		{
+			System.out.println(ch);
+		}
+		
+		System.out.println(emptyString);
+		//trim trims the spaces only in the leading & trailing
+		System.out.println(emptyString.trim());
+		
+		//YOu pass from index to a substring. A new String would be formed
+		System.out.println(customerNameAsAnObject.substring(4));
+													    //from,end
+		System.out.println(customerNameAsAnObject.substring(4, 7));
 	}
 
 	private static void isEmptyString(String emptyString) {
