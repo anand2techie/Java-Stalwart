@@ -127,14 +127,16 @@ public class StringMain {
 		}
 	}
 	
-	void printVowelCharacters(String someData)
+	public void printVowelCharacters(String someData)
 	{
 		//length() ---> gives you length of the String
 		for(int i=0;i<someData.length();i++)
 		{
 			//charAt() ---> extracts the char from the specified index
 			char ch=someData.charAt(i);
-			if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+			
+			char convertedCh=Character.toLowerCase(ch);
+			if(convertedCh=='a' || convertedCh=='e' || convertedCh=='i' || convertedCh=='o' || convertedCh=='u')
 			{
 				System.out.println(ch);
 			}
