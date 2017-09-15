@@ -3,6 +3,7 @@ package com.IO;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 import com.StringHandling.StringMain;
 
@@ -15,7 +16,8 @@ public class IOMain {
 
 		System.out.println("Enter input over console below:");
 		//readInputUsingISReader();
-		readInputUsingBufferedReader();
+		//readInputUsingBufferedReader();
+		readInputUsingScanner();
 	}
 
 	//reads the entire line @ a single stretch
@@ -50,6 +52,21 @@ public class IOMain {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	static void readInputUsingScanner()
+	{
+		//create a Scanner Object
+		Scanner scanner=new Scanner(System.in);
+		
+		//next() --> first string until it reaches space & nextLine() ---> reads the entire line
+		String readData=scanner.nextLine();
+		System.out.println(readData);
+		System.out.println("Enter no.of participants");
+		int noOfParticipants=scanner.nextInt();
+		System.out.println(noOfParticipants);
+		
+		scanner.close();
 	}
 
 }

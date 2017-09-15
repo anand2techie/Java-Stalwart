@@ -5,6 +5,8 @@ public class BicycleMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		IAccount account=new SavingsAccount();
+		
 		/*//Type 1: Using reference as Super class & Constructor as Super class
 	   //Reference objectName=new ConstructorName();
 		Bicycle bsaBicycle=new Bicycle();
