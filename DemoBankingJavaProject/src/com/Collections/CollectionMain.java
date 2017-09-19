@@ -18,7 +18,8 @@ public class CollectionMain {
 		
 		//learnSetInCollection();
 		
-		learnMapInCollectionConcept();
+		//learnMapInCollectionConcept();
+		CollectionImpl.learnMapInsideMap();
 	}
 
 	private static void learnMapInCollectionConcept() {
@@ -33,7 +34,8 @@ public class CollectionMain {
 		teamCaptainsMap.put("Pakistan", "Virat Kohli");
 		teamCaptainsMap.put("Australia", "Steven Smith");
 		teamCaptainsMap.put("South Africa", "AB De Villiers");
-		teamCaptainsMap.putIfAbsent("India", "Rohit Sharma");//overrides the old value
+		//teamCaptainsMap.put("India", "Rohit Sharma"); overrides the old value
+		teamCaptainsMap.putIfAbsent("India", "Rohit Sharma");//only if the key is not present
 		//System.out.println(teamCaptainsMap.isEmpty());
 		//printing the map
 		//System.out.println(teamCaptainsMap);
