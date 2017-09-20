@@ -1,9 +1,14 @@
 package com.Collections;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+
+import com.Customer;
 
 public class CollectionImpl {
 
@@ -11,6 +16,9 @@ public class CollectionImpl {
 	static void learnMapInsideMap()
 	{
 		TreeMap<String, Map<String,Integer>> studentWithSubjectDetailsMap=new TreeMap<String, Map<String,Integer>>();
+		
+		//Map<String,List<Long>> customerContactMap=new TreeMap<String,List<Long>>(); e.g. storing customer id's with their phone numbers
+		//Map<String,Customer> customerIdWithCUstomerObjectMap=new TreeMap<String,Customer>();
 		
 		studentWithSubjectDetailsMap.put("ECR001",constructSubjectMarksMap("ECR001"));
 		studentWithSubjectDetailsMap.put("ECR002",constructSubjectMarksMap("ECR002"));
@@ -84,5 +92,96 @@ public class CollectionImpl {
 			System.out.println("Just print something!!!");
 		}
 		return subjectMarksMap;
+	}
+	
+	static void learnCollectionOfObjects()
+	{
+		List<Customer> customersList=new ArrayList<Customer>();
+		
+		Customer charlesObj = new Customer();
+		charlesObj.setCustomerName("Charles"); //customerObj argument
+		charlesObj.setAccountType('C');
+		charlesObj.setAccountBalance(10000);
+		
+		customersList.add(charlesObj);
+
+		Customer alexObj = new Customer();
+		alexObj.setCustomerName("Alex"); //customer ---> argument
+		alexObj.setAccountType('R');
+		alexObj.setAccountBalance(100000);
+		
+		customersList.add(alexObj);
+
+		Customer davidObj = new Customer();
+		davidObj.setCustomerName("David"); //customer ---> instance
+		davidObj.setAccountType('R');
+		davidObj.setAccountBalance(1000);
+		
+		customersList.add(davidObj);
+		
+		System.out.println("Before sorting based on Customer name: ");
+		printCustomerAccBalances(customersList);
+		
+		/*System.out.println("using customer name comparator");
+		Collections.sort(customersList,new CustomerNameComparator()); //- sorting is not applicable for List of objects unless you do on your own
+		*/
+		
+		System.out.println("using acc balance comparator");
+		Collections.sort(customersList,new AccountBalanceComparator());
+		
+		System.out.println("After sorting based on Customer name: ");
+		printCustomerAccBalances(customersList);
+		//System.out.println(customersList);
+		//getCustomersOfAnAccountType(customersList,'O');
+	}
+	
+	static void getCustomersOfAnAccountType(List<Customer> customersList,char accountType)
+	{
+		Iterator<Customer> customersListItr=customersList.iterator();
+		while(customersListItr.hasNext())
+		{
+			Customer customerObj=customersListItr.next();
+			if(customerObj.getAccountType()==accountType)
+			{
+				System.out.println(customerObj.getCustomerName());
+			}
+		}
+	}
+	
+	static void sortCollections()
+	{
+		List<Integer> numbersList=new ArrayList<Integer>();
+		numbersList.add(100);//0
+		numbersList.add(234);//1
+		numbersList.add(67);//2
+		numbersList.add(78);//3
+		numbersList.add(90);//4
+		numbersList.add(90);//4
+		
+		System.out.println("Before sorting: ");
+		System.out.println(numbersList);
+		
+		//Collections.sort(numbersList);//ascending
+		Collections.sort(numbersList,Collections.reverseOrder());//descending
+		
+		
+		System.out.println("Before sorting: ");
+		System.out.println(numbersList);
+	}
+	
+	static void printCustomerNames(List<Customer> customersList)
+	{
+		for(Customer customerObj:customersList)
+		{
+			System.out.println(customerObj.getCustomerName());
+		}
+	}
+	
+	static void printCustomerAccBalances(List<Customer> customersList)
+	{
+		for(Customer customerObj:customersList)
+		{
+			System.out.println(customerObj.getAccountBalance());
+		}
 	}
 }

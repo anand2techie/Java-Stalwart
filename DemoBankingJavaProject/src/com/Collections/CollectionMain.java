@@ -19,7 +19,8 @@ public class CollectionMain {
 		//learnSetInCollection();
 		
 		//learnMapInCollectionConcept();
-		CollectionImpl.learnMapInsideMap();
+		//CollectionImpl.learnMapInsideMap();
+		CollectionImpl.learnCollectionOfObjects();
 	}
 
 	private static void learnMapInCollectionConcept() {
