@@ -2,6 +2,7 @@ package com.Collections;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -204,5 +205,5 @@ public class CollectionMain {
 		System.out.println("After clear:");
 		System.out.println(numbersList.isEmpty());
 	}
-
+	
 }

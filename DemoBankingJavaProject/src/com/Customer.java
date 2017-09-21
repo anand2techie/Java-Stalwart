@@ -1,6 +1,6 @@
 package com;
 
-public class Customer/* implements Comparable<Customer>*/{
+public class Customer implements Comparable<Customer> {
 
 	// parameterized constructor with 4 parameters
 	/*
@@ -116,12 +116,27 @@ public class Customer/* implements Comparable<Customer>*/{
 	public float getPI() {
 		return PI;
 	}
-/*
-	@Override
-	public int compareTo(Customer customerObj) {
-		//We need 2 instance to compare. One is in the argument and another is in instance variable.
-		return customerName.compareTo(customerObj.getCustomerName());
+	/*
+	 * @Override public int compareTo(Customer customerObj) { //We need 2
+	 * instance to compare. One is in the argument and another is in instance
+	 * variable. return customerName.compareTo(customerObj.getCustomerName()); }
+	 */
+
+	public boolean equals(Customer obj) {
+		// TODO Auto-generated method stub
+		return accountBalance == (obj.getAccountBalance());
 	}
-	*/
 	
+
+	@Override
+	public int compareTo(Customer o) {
+		// TODO Auto-generated method stub
+		if (accountBalance > (o.getAccountBalance())) {
+			return -1;
+		} else if (accountBalance < (o.getAccountBalance())) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
 }
