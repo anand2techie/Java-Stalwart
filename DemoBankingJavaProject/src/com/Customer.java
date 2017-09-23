@@ -1,6 +1,9 @@
 package com;
 
-public class Customer implements Comparable<Customer> {
+import java.io.Serializable;
+import java.util.List;
+
+public class Customer implements Comparable<Customer>,Serializable {
 
 	// parameterized constructor with 4 parameters
 	/*
@@ -9,6 +12,9 @@ public class Customer implements Comparable<Customer> {
 	 * returnType methodName(){.............}
 	 */
 
+	//will help you to come out of serialVersionUID incompatible error
+	final static long serialVersionUID=4444385032019203087l;
+	
 	public Customer() {
 		// TODO Auto-generated constructor stub
 	}
@@ -21,6 +27,46 @@ public class Customer implements Comparable<Customer> {
 	private char accountType;
 	private final float rateOfInterest = 12.6f;
 	private final float PI = 3.14f;
+	private transient int securityNumber;
+	private List<String> customerNomineesList;
+	private static int staticField;
+	private Account account;
+	
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
+	public static int getStaticField() {
+		return staticField;
+	}
+
+	public static void setStaticField(int staticField) {
+		Customer.staticField = staticField;
+	}
+
+	public List<String> getCustomerNomineesList() {
+		return customerNomineesList;
+	}
+
+	public void setCustomerNomineesList(List<String> customerNomineesList) {
+		this.customerNomineesList = customerNomineesList;
+	}
+
+	private int newField;
+	
+	public int getNewField() {
+		return newField;
+	}
+
+
+	public void setNewField(int newField) {
+		this.newField = newField;
+	}
+
 
 	// data......
 	public Customer(String customerName, long customerId, double accountBalance, char accountType) {
@@ -35,6 +81,17 @@ public class Customer implements Comparable<Customer> {
 		this.accountBalance = accountBalance;
 		this.accountType = accountType;
 	}
+
+	
+	public int getSecurityNumber() {
+		return securityNumber;
+	}
+
+
+	public void setSecurityNumber(int securityNumber) {
+		this.securityNumber = securityNumber;
+	}
+
 
 	Customer(String customerName, long customerId, char accountType) {
 		// TODO Auto-generated constructor stub
