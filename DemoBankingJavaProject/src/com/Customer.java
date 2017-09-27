@@ -21,6 +21,7 @@ public class Customer implements Comparable<Customer>,Serializable {
 
 	// global/instance variables (can be accessible throughout the class)
 	// data?????????
+	private long customerContactNo;
 	private String customerName;
 	private long customerId;
 	private double accountBalance;
@@ -32,6 +33,15 @@ public class Customer implements Comparable<Customer>,Serializable {
 	private static int staticField;
 	private Account account;
 	
+	
+	public long getCustomerContactNo() {
+		return customerContactNo;
+	}
+
+	public void setCustomerContactNo(long customerContactNo) {
+		this.customerContactNo = customerContactNo;
+	}
+
 	public Account getAccount() {
 		return account;
 	}
