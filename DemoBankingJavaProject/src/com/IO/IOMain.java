@@ -23,7 +23,8 @@ public class IOMain {
 		// readInputUsingISReader();
 		// readInputUsingBufferedReader();
 		// readInputUsingScanner();
-		readFromFile();
+		// readFromFile();
+		doOtherFileOperations();
 	}
 
 	// reads the entire line @ a single stretch
@@ -118,11 +119,11 @@ public class IOMain {
 	private static void writeToAnotherFile(StringBuffer dataToCheatsheet2) {
 		// TODO Auto-generated method stub
 		File file = new File("F:\\LFG\\Imran's session\\cheatsheet2.txt");
-		
-		//String is immutable; StringBuffer is mutable
+
+		// String is immutable; StringBuffer is mutable
 		dataToCheatsheet2.append("Test for data cheetsheet 2");
 
-		BufferedWriter bufferedWriter =null;
+		BufferedWriter bufferedWriter = null;
 		try {
 			FileWriter fileWriter = new FileWriter(file);
 
@@ -137,6 +138,34 @@ public class IOMain {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			}
+		}
+
+	}
+
+	static void doOtherFileOperations() {
+		// creating a folder = directory
+		File file = new File("F:\\testFolder1");
+
+		File testFile = new File("F:\\LFG\\Imran's session\\cheatsheet2.txt");
+
+		if (!file.exists()) {
+			file.mkdir();
+		}
+		System.out.println(file.isDirectory());
+		System.out.println(testFile.isDirectory());
+		// file.delete();
+		System.out.println(file.getParentFile());
+		// System.out.println(testFile.getParentFile());//absolute path until
+		// parent
+
+		// System.out.println(file.getName());//exact file name
+		System.out.println(file.toString());// full path till the file name
+		File[] fileArray = testFile.listFiles();// gives you File object to work
+												// with that
+		if (fileArray != null) {
+			for (File fileObject : fileArray) {
+				System.out.println(fileObject.getName());
 			}
 		}
 
