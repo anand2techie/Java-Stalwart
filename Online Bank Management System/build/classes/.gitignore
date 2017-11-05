@@ -19,6 +19,7 @@ WebContent/.DS_Store
 /dao/
 /database/
 /en.properties
+/examples/
 /exceptions/
 /front_controllers/
 /helpers/

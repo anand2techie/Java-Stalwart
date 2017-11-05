@@ -1,9 +1,13 @@
 package com.collections;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Set;
+import java.util.TreeSet;
 
 import com.smartcoders.sample.Student;
 import com.smartcoders.sample.StudentUtil;
@@ -11,12 +15,103 @@ import com.smartcoders.sample.StudentUtil;
 public class MainClassForCollections {
 
 	public static void main(String[] args) {
+		
+		workWithArrayList();
+		//workWithSet();
+	}
+
+
+	public static void workWithSet() {
+		// TODO Auto-generated method stub
+		//creating a Set
+		Set customerLocationSet=new TreeSet();
+		
+		//add elements to Set
+		customerLocationSet.add("Chennai");
+		customerLocationSet.add("Hyderabad");
+		customerLocationSet.add("California");
+		customerLocationSet.add("Texas");
+		customerLocationSet.add("Chennai");
+		
+		//same as list--> customerLocationSet.iterator()
+		
+		/*//same as list--> customerLocationSet.clear();
+		System.out.println(customerLocationSet);
+		customerLocationSet.remove("Texas");*/
+		System.out.println(customerLocationSet);
+		
+		customerLocationSet.size();
+		
+		/*
+		Set hashSet=new HashSet();
+		
+		Set treeSet=new TreeSet();*/
+		
+		
+	}
+
+
+	private static void workWithArrayList() {
+		List numbersList=new ArrayList();
+		//adding values into the list
+		numbersList.add(100);//0
+		numbersList.add(201);//1
+		numbersList.add(300);//2
+		numbersList.add(403);//3
+		
+		List namesList=new ArrayList();
+		namesList.add("Arun");
+		namesList.add("Dave");
+		namesList.add("Arun");
+		namesList.add("Alex");
+		namesList.add("Arun");
+		
+		//first occurrence
+		int index=namesList.indexOf("Arun");
+		
+		//last occurrence
+		int lastIndex=namesList.lastIndexOf("Arun");
+		System.out.println(index);
+		System.out.println(lastIndex);
+		
+		//'set' is to overrider; 'add' is to insert
+		namesList.set(1, "Charles");
+		System.out.println(namesList);
+		
+		List subList=namesList.subList(2, 4);//from - inclusive; to - exclusive
+		System.out.println(subList);
+		
+		//matching should happen one-to-one and should satisfy all the index
+		if(numbersList.equals(namesList))
+		{
+			System.out.println("Same");
+		}
+		else
+		{
+			System.out.println("Different");
+		}
+		
+		//always wrap the data or else it's going to be treated as an index
+		//numbersList.remove(new Integer(100));
+		
+		/*numbersList.remove(3);
+		
+		
+		System.out.println(numbersList);
+		
+		numbersList.clear();
+		
+		System.out.println(numbersList);
+		*/
+		
+		MainClassForCollections classForCollections=new MainClassForCollections();
+		classForCollections.removeEvenIndiceElementsUsingListIterator(numbersList);
+		
 		// TODO Auto-generated method stub
 
 		//creating a list
 		//List numbersList=new List(); - Cannot instantiate the type List
-		List numbersList=new ArrayList();
-		
+		List numbersList1=new ArrayList();
 		//adding values into the list
 		numbersList.add(100);//0
 		numbersList.add(201);//1
@@ -38,9 +133,9 @@ public class MainClassForCollections {
 		secondList.add(900);
 		secondList.add(400);
 		
-		/*secondList.add(new Student());
+		secondList.add(new Student());
 		secondList.add("Sintrtrr");
-		secondList.add('c');*/
+		secondList.add('c');
 		
 		//adding all the elements from one list to another list
 		//secondList.addAll(numbersList);
@@ -82,22 +177,73 @@ public class MainClassForCollections {
 				}
 			}
 			
-			//3. Using ListIterator
-			ListIterator listIterator=numbersList.listIterator();
+			//3. Using ListIterator - which can traverse a collection in both ways
+			System.out.println("numbers list: "+numbersList);
 			
+			System.out.println("Using List Iterator: ");
+															 //starting point of iteration
+			ListIterator listIterator=numbersList.listIterator(numbersList.size());
 			
-			/*//for reference to above object creation:
+			//Remove the element present in even indices
+			
+			//0th index
+			while(listIterator.hasPrevious())
+			{
+				int number=(int)listIterator.previous();
+				if(number%2==0)
+				{
+					System.out.println(number);
+				}
+			}
+			
+			System.out.println("outside iterator:");
+			//for reference to above object creation:
 			StudentUtil studentUtil=new StudentUtil();
 			Student alexObj=studentUtil.getStudent();
 			
-			Student alexObj1=new Student();*/
+			Student alexObj1=new Student();
 			
 			
 			//There is no any necessity of creating object by referring to an impl class.
 			//Interface xxx=new ImplementationClass();
 		
-		/*System.out.println("numbersList: "+numbersList);
-		System.out.println("secondlist: "+secondList);*/
+		System.out.println("numbersList: "+numbersList);
+		System.out.println("secondlist: "+secondList);
+	}
+	
+	
+	void removeEvenIndiceElementsUsingIterator(List numbersList)
+	{
+		Iterator numbersListItr=numbersList.iterator();
+		
+		int count=0;
+		while(numbersListItr.hasNext())
+		{
+			numbersListItr.next();
+			
+			//only for even index
+			if(count%2==0)
+			{
+			numbersListItr.remove();
+			}
+			count++;
+		}
+		
+		System.out.println(numbersList);
 	}
 
+	
+	void removeEvenIndiceElementsUsingListIterator(List numbersList)
+	{
+		ListIterator numbersListListItr=numbersList.listIterator(numbersList.size());
+		while(numbersListListItr.hasPrevious())
+		{
+			if(numbersListListItr.previousIndex()%2==0)
+			{
+				numbersListListItr.remove();
+			}
+		}
+		
+		System.out.println(numbersList);
+	}
 }

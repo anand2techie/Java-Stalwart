@@ -17,6 +17,9 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.rmi.PortableRemoteObject;
 
+import ib.account.Account;
+import ib.account.AccountHome;
+
 /**
  * This class demonstrates calling an entity EJBean,
  * followed by two exercises:
