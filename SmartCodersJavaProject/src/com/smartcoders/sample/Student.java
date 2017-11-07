@@ -135,5 +135,14 @@ public class Student {
 		// TODO Auto-generated method stub
 		return studentName;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		Student student=(Student)obj;
+		String appendedAllPropForArg=student.getStudentName()+student.getStudentLocation()+student.getAge();
+		String appendedAllPropForIns=this.studentName+this.studentLocation+this.age;
+		return appendedAllPropForArg.equals(appendedAllPropForIns);
+	}
 }
 

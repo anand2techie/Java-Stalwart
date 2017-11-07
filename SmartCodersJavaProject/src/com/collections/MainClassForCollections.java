@@ -16,7 +16,19 @@ public class MainClassForCollections {
 
 	public static void main(String[] args) {
 		
-		workWithArrayList();
+		//workWithArrayListOfUserDefinedObjects();
+	/*	
+		String str1=new String("Bob");//reference 1
+		String str2=new String("Bob");//reference 2
+		*/
+		
+		//== will not work for comparing references
+		
+		//using literal
+		String str1="Bob";
+		String str2="Bob";
+		doStringComparisonWithEqualTo(str1, str2);
+		doStringComparisonWithEqualsMethod(str1, str2);
 		//workWithSet();
 	}
 
@@ -50,6 +62,68 @@ public class MainClassForCollections {
 		
 	}
 
+	static void workWithArrayListOfUserDefinedObjects()
+	{
+		//Generic - to specify what type of elements this list is going to hold/store
+		List<Student> students=new ArrayList<Student>();
+		
+		Student alexObj=new Student();
+		alexObj.setAge(18);
+		alexObj.setStudentName("Alex");
+		alexObj.setStudentLocation("Los Angeles");
+		
+		Student daveObj=new Student();
+		daveObj.setAge(18);
+		daveObj.setStudentName("Dave");
+		daveObj.setStudentLocation("Los Angeles");
+		
+		Student chrisObj=new Student();
+		chrisObj.setAge(18);
+		chrisObj.setStudentName("Chris");
+		chrisObj.setStudentLocation("Los Angeles");
+		
+		Student bobObj=new Student();
+		bobObj.setAge(18);
+		bobObj.setStudentName("Bob");
+		bobObj.setStudentLocation("Los Angeles");
+		
+		students.add(alexObj);
+		students.add(daveObj);
+		students.add(chrisObj);
+		students.add(bobObj);
+		
+		System.out.println(students);
+		/*
+		Iterator<Student> studentsIr=students.iterator();
+		
+		while(studentsIr.hasNext())
+		{
+			//there is no need of explicit type casting, since We specified the generic
+			Student student=studentsIr.next();
+			System.out.println(student.getStudentLocation());
+			System.out.println(student.getStudentName());
+		}*/
+		
+		Student testObj=new Student();
+		testObj.setAge(18);
+		testObj.setStudentLocation("Los Angeles");
+		testObj.setStudentName("Bob");
+		
+		//comparison is based on reference
+		
+		//but if you want the comparison based on some properties, you need to write some coding!
+		System.out.println(testObj);
+		System.out.println(bobObj);
+		
+		if(students.contains(testObj))
+		{
+			System.out.println("Yes, it's present");
+		}
+		else
+		{
+			System.out.println("Nope!");
+		}
+	}
 
 	private static void workWithArrayList() {
 		List numbersList=new ArrayList();
@@ -245,5 +319,29 @@ public class MainClassForCollections {
 		}
 		
 		System.out.println(numbersList);
+	}
+	
+	static void doStringComparisonWithEqualTo(String str1,String str2)
+	{
+		if(str1==str2)
+		{
+			System.out.println("equal");
+		}
+		else
+		{
+			System.out.println("Nope");
+		}
+	}
+	
+	static void doStringComparisonWithEqualsMethod(String str1,String str2)
+	{
+		if(str1.equals(str2))
+		{
+			System.out.println("equal");
+		}
+		else
+		{
+			System.out.println("Nope");
+		}
 	}
 }
