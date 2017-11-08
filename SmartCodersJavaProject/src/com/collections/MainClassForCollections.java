@@ -1,12 +1,18 @@
 package com.collections;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 import com.smartcoders.sample.Student;
@@ -26,12 +32,88 @@ public class MainClassForCollections {
 		
 		//using literal
 		String str1="Bob";
-		String str2="Bob";
+		/*String str2="Bob";
 		doStringComparisonWithEqualTo(str1, str2);
-		doStringComparisonWithEqualsMethod(str1, str2);
+		doStringComparisonWithEqualsMethod(str1, str2);*/
 		//workWithSet();
+		
+		doProgramsInMap();
 	}
 
+	static void doProgramsInMap()
+	{
+		//Map<Object,Object>
+		Map<Long,String> customersMap=new TreeMap<Long,String>();
+		
+		//customerId,customerName
+		
+		//adding values to the map
+		customersMap.put(1238l, "Raj Narein");
+		customersMap.put(1235l, "Chris Daniel");
+		customersMap.put(1234l, "Alex Paul");
+		customersMap.put(1236l, "Mark Antony");
+		customersMap.put(1237l, "Jeev");
+		System.out.println(customersMap);
+		//since we specified the generic --> customersMap.put("Test", "Raj Narein");
+		
+		/*//override
+		//customersMap.put(1238l, "David");
+		
+		//will not override
+		customersMap.putIfAbsent(1239l, "David");
+		//not recommended --> customersMap.put(null, null);
+		
+		System.out.println(customersMap);
+		
+		String customerName=customersMap.get(56l);
+		System.out.println(customerName);
+		
+		//customersMap.containsKey/containsValue
+		//customersMap.remove(1238l);
+		customersMap.replace(1238l, "Raj Narein", "Bob");
+		
+		System.out.println(customersMap);
+		
+
+		//iterating a Map - Map can't be iterated directly.
+		//1. iterate only the keys --> keySet()
+		Set<Long> customersKeySet=customersMap.keySet();
+		
+		Iterator<Long> customersKeySetItr=customersKeySet.iterator();
+		while(customersKeySetItr.hasNext())
+		{
+			Long customerId=customersKeySetItr.next();
+			System.out.println(customerId+ " "+customersMap.get(customerId));
+		}
+		
+		System.out.println("using values:");
+		
+		//2. iterate only the values --> values()
+		Collection<String> customersMapValues=customersMap.values();
+		
+		Iterator<String> customersMapValuesItr=customersMapValues.iterator();
+		while(customersMapValuesItr.hasNext())
+		{
+			System.out.println(customersMapValuesItr.next());
+		}
+		
+		System.out.println("Using Entry Set:");
+		//3. iterate both key & value at the same time --> entrySet()
+		Set<Entry<Long, String>> customersMapEntrySet=customersMap.entrySet();
+		
+		Iterator<Entry<Long, String>> customersMapEntrySetItr=customersMapEntrySet.iterator();
+		
+		while(customersMapEntrySetItr.hasNext())
+		{
+			Entry<Long, String> entryData=customersMapEntrySetItr.next();
+			Long key=entryData.getKey();
+			String value=entryData.getValue();
+			
+			System.out.println(key);
+			System.out.println(value);
+		}*/
+		
+ 	}
 
 	public static void workWithSet() {
 		// TODO Auto-generated method stub
