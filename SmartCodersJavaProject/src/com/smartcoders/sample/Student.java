@@ -1,6 +1,6 @@
 package com.smartcoders.sample;
 
-public class Student {
+public class Student /*implements Comparable<Student>*/{
 
 	// define some global variables - fields
 	// different set - global/instance variables
@@ -144,5 +144,11 @@ public class Student {
 		String appendedAllPropForIns=this.studentName+this.studentLocation+this.age;
 		return appendedAllPropForArg.equals(appendedAllPropForIns);
 	}
+
+	/*@Override
+	public int compareTo(Student student) {
+		// TODO Auto-generated method stub
+		return this.studentName.compareTo(student.getStudentName());
+	}*/
 }
 
