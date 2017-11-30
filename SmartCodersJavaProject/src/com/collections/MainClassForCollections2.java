@@ -18,6 +18,14 @@ public class MainClassForCollections2 {
 		numbersList.add(200);
 		numbersList.add(300);
 
+		
+		List<Integer> unmodNumbersList=Collections.unmodifiableList(numbersList);
+		System.out.println(unmodNumbersList);
+		unmodNumbersList.add(6700);
+		unmodNumbersList.set(0, 455);
+		/*Collections.sort(numbersList,Collections.reverseOrder());
+		Collections.reverse(numbersList);*/
+		//using comparator --> Collections.reverseOrder(cmp)
 		System.out.println(numbersList);
 		Collections.sort(numbersList);
 		System.out.println(numbersList);
